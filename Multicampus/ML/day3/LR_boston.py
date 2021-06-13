@@ -25,5 +25,5 @@ price = model.predict(testX)
 
 # 시험 데이터 전체의 오류를 R-square로 표시한다.
 print('\n시험 데이터 전체 오류 (R2-score) = %.4f' % model.score(testX, testY))
-print('첫 번째 testX의 추정 가격 = %.2f' % scalerY.inverse_transform(price[0].reshape(1, -1)))
-print('첫 번째 testX의 실제 가격 = %.2f' % scalerY.inverse_transform(testY[0].reshape(1, -1)))
+print('첫 번째 testX의 추정 가격 = %.2f' % scaleY.inverse_transform(price[0].reshape(1, -1)))
+print('첫 번째 testX의 실제 가격 = %.2f' % scaleY.inverse_transform(testY[0].reshape(1, -1)))
