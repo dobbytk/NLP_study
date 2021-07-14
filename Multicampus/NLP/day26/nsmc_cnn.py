@@ -1,5 +1,3 @@
-%cd '/content/drive/MyDrive/머신러닝(멀티캠퍼스)/nsmc'
-!pip install konlpy
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
