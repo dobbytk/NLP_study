@@ -144,12 +144,12 @@ for que_str, reference in zip(que_test[:10], ans_test[:10]):
     #
     # 1. 짧은 문장이 많기 때문에 단어가 아닌 subword 단위로 BLEU를 측정한다.
     # 2. (Papineni et al. 2002)은 micro-average를 사용했지만, 여기서는 단순 평균인 macro-average를 사용한다.
-    # reference = sp.encode_as_pieces(reference) # test set의 답
-    # candidate = sp.encode_as_pieces(candidate)
+    reference = sp.encode_as_pieces(reference) # test set의 답
+    candidate = sp.encode_as_pieces(candidate)
 
-    bleu = sentence_bleu(reference, candidate, weights=[1/2., 1/2.])
+    bleu = sentence_bleu([reference], candidate, weights=[1/2., 1/2.])
     bleu_list.append(bleu)
-    print(que_str, '-->', candidate, ':', np.round(bleu, 4))
+    print(que_str, '-->', sp.decode_pieces(candidate), ':', np.round(bleu, 4))
 print('Average BLEU score =', np.round(np.mean(bleu_list), 4))
 
 # Chatting

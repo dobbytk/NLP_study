@@ -337,7 +337,7 @@ for candidate, reference in zip(test['predict'][:10], test['A'][:10]):
     # reference = sp.encode_as_pieces(reference)
     # candidate = sp.encode_as_pieces(candidate)
 
-    bleu = sentence_bleu(candidate, reference, weights=[1/2., 1/2.])
+    bleu = sentence_bleu(candidate, [reference], weights=[1/2., 1/2.])
     # print(bleu)
     bleu_list.append(bleu)
     print(reference, '<-->', candidate, ':', np.round(bleu, 4))
