@@ -96,6 +96,8 @@ def build_data(doc):
 
     return x_ids, x_msk, x_typ
 
+x_train, x_test, y_train, y_test = train_test_split(news, topic, test_size=0.1)
+
 x_train_ids, x_train_msk, x_train_typ = build_data(x_train)
 x_test_ids, x_test_msk, x_test_typ = build_data(x_test)
 
